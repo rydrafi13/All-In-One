@@ -1,0 +1,20 @@
+# CREATE client-rc
+
+vim client-rc
+
+# UBAH SYNTAX
+
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USER_DOMAIN_NAME=Default
+export OS_PROJECT_NAME=IDN
+export OS_USERNAME=rafiryd
+export OS_PASSWORD=@dmin123
+export OS_AUTH_URL=http://HOSTNAME:5000/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_IMAGE_API_VERSION=2
+export PS1='\u@\h \W(client-rc)\$ '
+
+# VERIFIKASI
+
+chmod 600 ~/client-rc
+source ~/client-rc
