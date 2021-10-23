@@ -1,0 +1,12 @@
+# EDIT FILE
+
+vim /etc/apache2/apache2.conf
+
+# UBAH SYNTAX
+
+# line 70
+ServerName HOSTNAME
+
+# RESTART SERVICE
+
+systemctl restart apache2
