@@ -1,0 +1,45 @@
+# INSTALL GLANCE
+
+apt -y install glance
+
+# EDIT GLANCE
+
+vim /etc/glance/glance-api.conf 
+
+# UBAH SYNTAX
+
+# create new
+
+[DEFAULT]
+bind_host = 0.0.0.0
+
+[glance_store]
+stores = file,http
+default_store = file
+filesystem_store_datadir = /var/lib/glance/images/
+
+[database]
+# MariaDB connection info
+connection = mysql+pymysql://glance:password@IP_ADDR/glance
+
+# keystone auth info
+[keystone_authtoken]
+www_authenticate_uri = http://IP_ADDR:5000
+auth_url = http://IP_ADDR:5000
+memcached_servers = IP_ADDR:11211
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+project_name = service
+username = glance
+password = password
+
+[paste_deploy]
+flavor = keystone
+
+# VERIFIKASI
+
+chmod 640 /etc/glance/glance-api.conf 
+chown root:glance /etc/glance/glance-api.conf 
+su -s /bin/bash glance -c "glance-manage db_sync" 
+systemctl restart glance-api
