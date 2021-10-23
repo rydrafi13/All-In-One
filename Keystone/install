@@ -1,0 +1,33 @@
+# INSTALL PAKET
+
+apt -y install keystone apache2 libapache2-mod-wsgi-py3 python3-oauth2client
+
+# EDIT FILE
+
+vim /etc/keystone/keystone.conf
+
+# UBAH SYNTAX
+
+# line 440
+memcache_servers = IP_ADDR:11211
+# line 598
+connection = mysql+pymysql://keystone:password@IP_ADDR/keystone
+# line 2512
+provider = fernet
+
+# VERIFIKASI
+
+su -s /bin/bash keystone -c "keystone-manage db_sync"
+keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone
+keystone-manage credential_setup --keystone-user keystone --keystone-group keystone
+
+# BOOTSTRAP 
+
+export HOSTNAME=IP_ADDR
+
+keystone-manage bootstrap --bootstrap-password password \
+--bootstrap-admin-url http://HOSTNAME:5000/v3/ \
+--bootstrap-internal-url http://HOSTNAME:5000/v3/ \
+--bootstrap-public-url http://HOSTNAME:5000/v3/ \
+--bootstrap-region-id RegionOne
+
