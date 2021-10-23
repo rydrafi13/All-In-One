@@ -23,11 +23,9 @@ keystone-manage credential_setup --keystone-user keystone --keystone-group keyst
 
 # BOOTSTRAP 
 
-export HOSTNAME=IP_ADDR
-
 keystone-manage bootstrap --bootstrap-password password \
---bootstrap-admin-url http://HOSTNAME:5000/v3/ \
---bootstrap-internal-url http://HOSTNAME:5000/v3/ \
---bootstrap-public-url http://HOSTNAME:5000/v3/ \
+--bootstrap-admin-url http://IP_ADDR:5000/v3/ \
+--bootstrap-internal-url http://IP_ADDR:5000/v3/ \
+--bootstrap-public-url http://IP_ADDR:5000/v3/ \
 --bootstrap-region-id RegionOne
 
