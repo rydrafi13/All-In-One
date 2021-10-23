@@ -6,6 +6,6 @@ openstack service create --name glance --description "OpenStack Image service" i
 
 # ADD ENDPOINT
 
-openstack endpoint create --region RegionOne image public http://HOSTNAME:9292
-openstack endpoint create --region RegionOne image internal http://HOSTNAME:9292 
-openstack endpoint create --region RegionOne image admin http://HOSTNAME:9292 
+openstack endpoint create --region RegionOne image public http://IP_ADDR:9292
+openstack endpoint create --region RegionOne image internal http://IP_ADDR:9292 
+openstack endpoint create --region RegionOne image admin http://IP_ADDR:9292 
