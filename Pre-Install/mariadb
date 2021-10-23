@@ -1,0 +1,20 @@
+# INSTALL PAKET
+
+apt install mariadb-server python3-pymysql
+
+# EDIT FILE
+
+vim /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# UBAH SCRIPT
+
+[mysqld]
+bind-address = IP_ADDR
+
+# RESTART SERVICE MARIADB
+
+service mysql restart
+
+# CREATE PASSWORD
+
+mysql_secure_installation
