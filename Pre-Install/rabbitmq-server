@@ -1,0 +1,8 @@
+# INSTALL PAKET
+
+apt install rabbitmq-server
+
+# CREATE PASSWORD AND PERMISSION
+
+rabbitmqctl add_user openstack RABBIT_PASS
+rabbitmqctl set_permissions openstack ".*" ".*" ".*"
