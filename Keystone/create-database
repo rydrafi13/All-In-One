@@ -1,0 +1,11 @@
+# LOGIN KE MYSQL
+
+mysql
+
+# MEMBUAT USER BARU
+
+CREATE DATABASE keystone;
+grant all privileges on keystone.* to keystone@'localhost' identified by 'password'; 
+grant all privileges on keystone.* to keystone@'%' identified by 'password';
+flush privileges; 
+exit;
