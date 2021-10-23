@@ -1,0 +1,15 @@
+# INSTALL PAKET
+
+apt install memcached python3-memcache
+
+# EDIT FILE
+
+vim /etc/memcached.conf
+
+# UBAH SCRIPT
+
+-l IP_ADDR
+
+# RESTART MEMCACHED
+
+service memcached restart
