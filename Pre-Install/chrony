@@ -1,0 +1,20 @@
+# INSTALL PAKET
+
+apt install chrony
+
+# EDIT FILE
+
+vim /etc/chrony.conf
+
+# UBAH SCRIPT
+
+server IP_ADDRESS iburst
+allow IP_RANGE
+
+# RESTART CHRONY
+
+systemctl restart chrony
+
+# VERIFIKASI
+
+chronyc sources
