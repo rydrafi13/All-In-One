@@ -1,0 +1,7 @@
+# ADD REPOSITORY
+
+add-apt-repository cloud-archive:victoria
+
+# INSTALL PAKET
+
+apt install python3-openstackclient
