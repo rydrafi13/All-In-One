@@ -1,4 +1,7 @@
+====1=====
 apt -y install nova-api nova-conductor nova-scheduler nova-novncproxy placement-api python3-novaclient
 
+
+====2=====
 apt -y install qemu-kvm libvirt-daemon-system libvirt-daemon virtinst bridge-utils libosinfo-bin libguestfs-tools virt-top 
 apt -y install nova-compute nova-compute-kvm  
