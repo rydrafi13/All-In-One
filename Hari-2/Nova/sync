@@ -4,9 +4,6 @@ su -s /bin/bash nova -c "nova-manage cell_v2 map_cell0"
 su -s /bin/bash nova -c "nova-manage db sync" 
 su -s /bin/bash nova -c "nova-manage cell_v2 create_cell --name cell1" 
 
-systemctl restart apache2 
-for service in api conductor scheduler novncproxy; do
-systemctl restart nova-$service
-done 
+systemctl restart apache2 nova*
 
 openstack compute service list 
