@@ -1,0 +1,6 @@
+openstack user create --domain default --project service --password password placement 
+openstack role add --project service --user placement admin
+openstack service create --name placement --description "OpenStack Compute Placement service" placement
+openstack endpoint create --region RegionOne placement public http://IP_ADDR:8778 
+openstack endpoint create --region RegionOne placement internal http://IP_ADDR:8778 
+openstack endpoint create --region RegionOne placement admin http://IP_ADDR:8778 
