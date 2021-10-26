@@ -1,25 +1,24 @@
-# konfigurasi
-vi /etc/openstack-dashboard/local_settings.py 
-*script
+vim /etc/openstack-dashboard/local_settings.py 
+
 # line 99: change Memcache server
 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '$ip_addr:11211',
+        'LOCATION': 'IP_ADDRESS:11211',
     },
 }
 
 # line 113: add
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
 # line 126: set Openstack Host
 
 # line 127: comment out and add a line to specify URL of Keystone Host
 
-OPENSTACK_HOST = "$ip_addr"
-#OPENSTACK_KEYSTONE_URL = "http://%s/identity/v3" % OPENSTACK_HOST
-OPENSTACK_KEYSTONE_URL = "http://$ip_addr:5000/v3"
+OPENSTACK_HOST = "IP_ADDRESS"
+OPENSTACK_KEYSTONE_URL = "http://IP_ADDRESS:5000/v3"
 
 # line 131: set your timezone
 
@@ -32,4 +31,6 @@ OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'Default'
 
 root@dlp ~(keystone)# systemctl restart apache2
 
-http://$ip_addr/horizon/ 
+# Buka dibrowser
+
+http://IP_ADDRESS/horizon/ 
