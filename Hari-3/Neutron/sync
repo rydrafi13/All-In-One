@@ -1,8 +1,7 @@
 ln -s /etc/neutron/plugins/ml2/ml2_conf.ini /etc/neutron/plugin.ini 
 su -s /bin/bash neutron -c "neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugin.ini upgrade head" 
-for service in server l3-agent dhcp-agent metadata-agent openvswitch-agent; do
-systemctl restart neutron-$service
-systemctl enable neutron-$service
-done 
+
+systemctl restart neutron*
 systemctl restart nova-api nova-compute 
+
 openstack network agent list
