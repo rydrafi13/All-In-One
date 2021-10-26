@@ -4,7 +4,7 @@ apt install chrony
 
 # EDIT FILE
 
-vim /etc/chrony.conf
+vim /etc/chrony/chrony.conf
 
 # UBAH SCRIPT
 
