@@ -1,0 +1,11 @@
+openstack network create --project service \
+--share --provider-network-type flat --provider-physical-network physnet mynet
+
+openstack subnet create mysubnet --network mynet \
+--project service --subnet-range 172.23.0.0/20 \
+--allocation-pool start=IP_AWAL,end=IP_AKHIR \
+--gateway 172.23.0.1 --dns-nameserver 172.23.0.1
+
+openstack network list
+
+openstack subnet list

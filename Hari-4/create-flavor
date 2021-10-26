@@ -1,0 +1,4 @@
+openstack flavor create --id 0 --vcpus 1 --ram 2048 --disk 10 m1.small
+
+openstack flavor list
+

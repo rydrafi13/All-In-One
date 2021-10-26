@@ -1,0 +1,5 @@
+openstack security group rule create --protocol icmp --ingress my-rule
+
+openstack security group rule create --protocol tcp --dst-port 22:22 my-rule
+
+openstack security group rule list

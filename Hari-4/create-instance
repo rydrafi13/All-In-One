@@ -1,0 +1,3 @@
+openstack server create --flavor m1.small --image Cirros-Official --security-group my-rule --nic net-id=mynet --key-name mykey My_VM1
+
+openstack server list

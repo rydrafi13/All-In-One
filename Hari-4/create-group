@@ -1,0 +1,3 @@
+openstack security group create my-rule
+
+openstack security group list
