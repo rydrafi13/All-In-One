@@ -1,0 +1,4 @@
+ifconfig ens192 up
+ovs-vsctl add-br br-ens192
+ovs-vsctl add-port br-ens192 ens192
+ovs-vsctl show
