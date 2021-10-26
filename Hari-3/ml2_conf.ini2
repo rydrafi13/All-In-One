@@ -1,0 +1,5 @@
+vi /etc/neutron/plugins/ml2/ml2_conf.ini 
+# line 206: add
+
+[ml2_type_flat]
+flat_networks = physnet1

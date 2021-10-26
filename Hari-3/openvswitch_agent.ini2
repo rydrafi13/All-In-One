@@ -1,0 +1,9 @@
+vi /etc/neutron/plugins/ml2/openvswitch_agent.ini
+[agent]
+tunnel_types = vxlan
+prevent_arp_spoofing = True
+[ovs]
+local_ip = $ip_addr
+bridge_mappings = provider:br-ens192
+
+systemctl restart neutron-openvswitch-agent  
